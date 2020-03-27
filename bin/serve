@@ -1,0 +1,7 @@
+#!/bin/bash
+# Unofficial bash strict mode http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euxo pipefail
+IFS=$'\n\t'
+
+docker build -t quotes .
+docker run -ti --publish=4567:4567 --rm quotes
