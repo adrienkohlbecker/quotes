@@ -18,7 +18,7 @@ module Scrapers
       header = csv.first
       index = header.index(@symbol)
 
-      csv.map do |i|
+      results = csv.map do |i|
         next if i[index] == 'N/A'
 
         {
@@ -26,6 +26,8 @@ module Scrapers
           close: i[index].to_f
         }
       end
+
+      results.compact
     end
 
     private
