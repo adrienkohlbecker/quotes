@@ -16,14 +16,16 @@ module Scrapers
       csv = CSV.new(fetch_document, col_sep: ',', row_sep: "\n")
 
       header = csv.first
-      index = header.index(@symbol)
+      index = header.index(@symbol.upcase)
 
       results = csv.map do |i|
         next if i[index] == 'N/A'
+        value = Rational(i[index])
 
         {
           date: i[0],
-          close: i[index].to_f
+          close: value.to_f,
+          inverted: (1/value).round(5).to_f
         }
       end
 
