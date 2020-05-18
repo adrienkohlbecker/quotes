@@ -14,7 +14,8 @@ SCRAPERS = {
   bnd: Scrapers::BND,
   coingecko: Scrapers::Coingecko,
   ecb: Scrapers::ECB,
-  eres: Scrapers::Eres
+  eres: Scrapers::Eres,
+  zonebourse: Scrapers::Zonebourse
 }.freeze
 
 get '/:scraper/:id' do
