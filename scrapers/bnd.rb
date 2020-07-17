@@ -29,10 +29,10 @@ module Scrapers
       raise 'weird data' if @json['Total'] < 50 || !@json['Errors'].nil?
 
       @json['Data'].map do |item|
-        date = Time.at(item['Date'].match(/.*\((\d+)\).*/)[1].to_i / 1000).to_date
+        date = Time.at(item['RateDate'].match(/.*\((\d+)\).*/)[1].to_i / 1000).to_date
         {
           date: date.strftime('%Y-%m-%d'),
-          close: item['NavMember']
+          close: item['LastRate']
         }
       end
     end
