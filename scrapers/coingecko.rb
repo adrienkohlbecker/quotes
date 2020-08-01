@@ -19,7 +19,7 @@ module Scrapers
         date = Time.at(item[0] / 1000).to_date
         {
           date: date.strftime('%Y-%m-%d'),
-          close: item[1]
+          close: item[1] / 1000 # we work in micro-currency units (mBTC, mETH)
         }
       end
     end
