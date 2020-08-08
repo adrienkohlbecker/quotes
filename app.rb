@@ -13,6 +13,7 @@ SCRAPERS = {
   boursorama: Scrapers::Boursorama,
   bnd: Scrapers::BND,
   coingecko: Scrapers::Coingecko,
+  coingecko_inverted: Scrapers::CoingeckoInverted,
   ecb: Scrapers::ECB,
   eres: Scrapers::Eres,
   zonebourse: Scrapers::Zonebourse

@@ -6,6 +6,8 @@ require 'active_support/time'
 
 module Scrapers
   class Coingecko
+    def inverted; false; end
+
     def initialize(chart)
       uri = "https://www.coingecko.com/price_charts/#{chart}/eur/max.json?locale=en"
       options = {
@@ -19,7 +21,7 @@ module Scrapers
         date = Time.at(item[0] / 1000).to_date
         {
           date: date.strftime('%Y-%m-%d'),
-          close: item[1] / 1000 # we work in micro-currency units (mBTC, mETH)
+          close: inverted ? 1000 / item[1] : item[1] / 1000 # we work in micro-currency units (mBTC, mETH)
         }
       end
     end
