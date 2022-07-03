@@ -27,10 +27,3 @@ module Scrapers
     end
   end
 end
-
-# 26 18346
-# 27 1H 18346
-# 27 18347
-
-# offset = DateTime.new(2020,3,28,0,30,0,'+0100').in_time_zone('Europe/Paris').hour < 1 ? 1 : 0
-# date = Date.new(1970,1,1).days_since(18347+offset)

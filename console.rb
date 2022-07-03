@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'irb'
+require 'pry'
 require_relative 'files.rb'
 
-IRB.start
+Pry.start
