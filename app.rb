@@ -29,3 +29,10 @@ get '/:scraper/:id' do
   headers 'Content-Type' => 'application/json'
   JSON.pretty_generate(scraper.new(id).quotation_history)
 end
+
+post '/asr' do
+  cookiesFile = params[:cookies] ? params[:cookies][:tempfile] : nil
+
+  headers 'Content-Type' => 'application/json'
+  JSON.pretty_generate(Scrapers::ASR.new(params[:date], params[:verification_token], cookiesFile).investment_status)
+end
