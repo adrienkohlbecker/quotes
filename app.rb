@@ -24,7 +24,7 @@ get '/:scraper/:id' do
   halt 404 if scraper.nil?
 
   id = params[:id]
-  halt 404 unless id.match?(/^[a-zA-Z0-9-\._]+$/)
+  halt 404 unless id.match?(/^[a-zA-Z0-9\-\._]+$/)
 
   headers 'Content-Type' => 'application/json'
   JSON.pretty_generate(scraper.new(id).quotation_history)

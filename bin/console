@@ -3,5 +3,4 @@
 set -euxo pipefail
 IFS=$'\n\t'
 
-docker build -t quotes .
-docker run -ti --rm -v $(pwd):/app quotes bundle exec ruby console.rb
+bundle exec ruby console.rb

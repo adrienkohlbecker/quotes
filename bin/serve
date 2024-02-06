@@ -3,5 +3,4 @@
 set -euxo pipefail
 IFS=$'\n\t'
 
-docker build -t quotes .
-docker run -ti --publish=4567:4567 --rm quotes
+bundle exec ruby app.rb
