@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 def reload!
+  load File.dirname(__FILE__) + '/logging.rb'
   load File.dirname(__FILE__) + '/scrapers/asr.rb'
   load File.dirname(__FILE__) + '/scrapers/bnd.rb'
   load File.dirname(__FILE__) + '/scrapers/boursorama.rb'
