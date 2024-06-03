@@ -12,4 +12,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["./bin/serve"]
+CMD ["./bin/serve", "-e", "production"]
